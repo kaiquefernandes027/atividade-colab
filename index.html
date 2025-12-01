@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Manager System</h1>
+            <p>Organize suas tarefas de forma eficiente e produtiva</p>
+        </header>
+
+        <div class="main-content">
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="totalTasks">0</h3>
+                    <p>Total de Tarefas</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="completedTasks">0</h3>
+                    <p>Concluídas</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="pendingTasks">0</h3>
+                    <p>Pendentes</p>
+                </div>
+            </div>
+
+            <div class="task-form">
+                <h2>➕ Adicionar Nova Tarefa</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">Título da Tarefa *</label>
+                        <input type="text" id="taskTitle" required placeholder="Ex: Estudar Git e GitHub">
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDescription">Descrição</label>
+                        <textarea id="taskDescription" placeholder="Descreva os detalhes da tarefa..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridade</label>
+                        <select id="taskPriority">
+                            <option value="low">🔵 Baixa</option>
+                            <option value="medium" selected>🟡 Média</option>
+                            <option value="high">🔴 Alta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDate">Data de Vencimento</label>
+                        <input type="date" id="taskDate">
+                    </div>
+                    <button type="submit" class="btn">Adicionar Tarefa</button>
+                </form>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendentes</button>
+                <button class="filter-btn" data-filter="completed">Concluídas</button>
+                <button class="filter-btn" data-filter="high">Alta Prioridade</button>
+            </div>
+
+            <h2 class="section-title">📝 Minhas Tarefas</h2>
+            <div id="tasksContainer" class="tasks-container"></div>
+        </div>
+    </div>
+<script src="features/savelocalstorage.js"></script>
+    <script src="features/addtask.js"></script>
+<script src="features/deletetask.js"></script>
+<script src="features/escopeHtml.js"></script>
+<script src="features/filtertask.js"></script>
+<script src="features/formatdate.js"></script>
+<script src="features/getfilterestasks.js"></script>
+<script src="features/rendertasks.js"></script>
+<script src="features/savetask.js"></script>
+<script src="features/togglecomplete.js"></script>
+<script src="features/updatetasks.js"></script>
+</body>
+</html>
