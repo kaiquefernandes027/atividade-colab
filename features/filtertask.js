@@ -8,4 +8,3 @@ function filterTasks(filter) {
             });
             renderTasks();
         }
-        // urgent-buscar-tarefa: correção passo 2
